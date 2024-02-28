@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'pmd'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation ("net.sourceforge.pmd:pmd:6.39.0")
+}
+
+pmd {
+    consoleOutput = true
+    toolVersion = "6.21.0"
+    rulesMinimumPriority = 5
+    ruleSets = ["category/java/errorprone.xml", "category/java/bestpractices.xml"]
+}
